@@ -1,12 +1,5 @@
 package ru.progwards.java1.lessons.test;
 
-public class Test3 {
-
-    public static void main(String[] args) {
-        System.out.println();
-    }
-}
-
 class Point2D {
     private int x, y;
 
