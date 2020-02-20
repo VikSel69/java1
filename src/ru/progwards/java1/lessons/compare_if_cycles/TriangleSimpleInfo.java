@@ -24,9 +24,9 @@ public class TriangleSimpleInfo {
     }
 
     public static void main(String[] args) {
-        int a = 1;
+        int a = 2;
         int b = 2;
-        int c = 3;
+        int c = 2;
         System.out.println(maxSide(a, b, c));
         System.out.println(minSide(a, b, c));
         System.out.println(isEquilateralTriangle(a, b, c));
