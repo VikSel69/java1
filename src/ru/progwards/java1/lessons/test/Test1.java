@@ -1,15 +1,19 @@
 package ru.progwards.java1.lessons.test;
+import java.util.Arrays;
 
 public class Test1 {
-        static long factorial(long n) {
-            long factorialValue = 1L;
-            for (int i = 1; n > 0 && i <= n; i++) {
-                factorialValue *= i;
-            }
-            return factorialValue;
+    public int arrayMax(int[] a) {
+        if (a.length == 0)
+            return 0;
+        else {
+            Arrays.sort(a);
+            return a[a.length - 1];
         }
+    }
 
     public static void main(String[] args) {
-        System.out.println(factorial(10));
+        Test1 maxArray = new Test1();
+        int[] array = {};
+        System.out.println(maxArray.arrayMax(array));
     }
 }
