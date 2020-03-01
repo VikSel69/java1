@@ -20,11 +20,12 @@ public class Eratosthenes {
         }
     }
     public boolean isSimple(int n) {
-        return sieve[n];
+        return sieve[n - 2];
     }
 
     public static void main(String[] args) {
         Eratosthenes test = new Eratosthenes(10);
         System.out.println(Arrays.toString(test.sieve));
+        System.out.println(test.isSimple(2));
     }
 }
