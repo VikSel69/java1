@@ -25,6 +25,6 @@ public class Eratosthenes {
 
     public static void main(String[] args) {
         Eratosthenes test = new Eratosthenes(10);
-        System.out.println(test.isSimple(7));
+        System.out.println(Arrays.toString(test.sieve));
     }
 }

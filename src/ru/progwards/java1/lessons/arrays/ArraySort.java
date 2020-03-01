@@ -1,4 +1,5 @@
 package ru.progwards.java1.lessons.arrays;
+import java.util.Arrays;
 
 public class ArraySort {
     public static void sort(int[] a) {
@@ -17,8 +18,6 @@ public class ArraySort {
     public static void main(String[] args) {
         int[] arrayResult = {9, 1214, 0, 3, 10, 74, 25, -3, 44, 37, 5};
         sort(arrayResult);
-        for (int i = 0; i < arrayResult.length; i++) {
-            System.out.println(arrayResult[i]);
-        }
+        System.out.println(Arrays.toString(arrayResult));
     }
 }
