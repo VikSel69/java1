@@ -10,7 +10,7 @@ public class DIntArray {
     public void add(int num) {
         int bArray[] = Arrays.copyOf(aArray, aArray.length + 1);
         bArray[bArray.length - 1] = num;
-        System.out.println(Arrays.toString(bArray));
+        //System.out.println(Arrays.toString(bArray));
     }
     public void atInsert(int pos, int num) {
         int bArray[] = Arrays.copyOf(aArray, aArray.length + 1);
@@ -18,14 +18,14 @@ public class DIntArray {
             bArray[i + 1] = bArray[i];
         }
         bArray[pos] = num;
-        System.out.println(Arrays.toString(bArray));
+        //System.out.println(Arrays.toString(bArray));
     }
     public void atDelete(int pos) {
         for (int i = pos; i < aArray.length - 1; i++) {
             aArray[i] = aArray[i + 1];
         }
         int bArray[] = Arrays.copyOf(aArray, aArray.length - 1);
-        System.out.println(Arrays.toString(bArray));
+        //System.out.println(Arrays.toString(bArray));
     }
 
     public static void main(String[] args) {
