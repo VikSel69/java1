@@ -4,7 +4,7 @@ import java.util.Arrays;
 public class DIntArray {
     private int aArray[] = {1, 2, 3, 4, 5};
 
-    private DIntArray() {
+    public DIntArray() {
     }
 
     public void add(int num) {
@@ -31,6 +31,7 @@ public class DIntArray {
     public static void main(String[] args) {
         DIntArray stringArray = new DIntArray();
         stringArray.add(12);
+        //System.out.println(Arrays.toString(stringArray.bArray));
         stringArray.atInsert(1, 15);
         stringArray.atDelete(1);
     }
