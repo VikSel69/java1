@@ -24,6 +24,9 @@ public class DIntArray {
         }
         aArray = Arrays.copyOf(aArray, aArray.length - 1);
     }
+    public int at(int pos) {
+        return aArray[pos];
+    }
 
     public static void main(String[] args) {
         DIntArray stringArray = new DIntArray();
@@ -37,5 +40,6 @@ public class DIntArray {
         System.out.println(Arrays.toString(stringArray.aArray));
         stringArray.atDelete(1);
         System.out.println(Arrays.toString(stringArray.aArray));
+        System.out.println(stringArray.at(1));
     }
 }
