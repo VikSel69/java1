@@ -1,6 +1,8 @@
 package ru.progwards.java1.lessons.classes;
 
-class Animal {
+import java.util.Objects;
+
+class Animal implements FoodCompare {
     double weight;
     enum AnimalKind {
         ANIMAL, COW, HAMSTER, DUCK
@@ -18,77 +20,66 @@ class Animal {
         return FoodKind.UNKNOWN;
     }
     public String toString() {
-        return ("I am " + this.getKind() + ", eat " + this.getFoodKind());
+        return ("I am " + getKind() + ", eat " + getFoodKind());
     }
     public double getWeight() {
-        return this.weight;
+        return weight;
     }
     public double getFoodCoeff() {
         return 0.02;
     }
     public double calculateFoodWeight() {
-        return this.weight * this.getFoodCoeff();
+        return getWeight() * getFoodCoeff();
     }
     public String toStringFull() {
-        return ("I am " + this.getKind() + ", eat " + this.getFoodKind() + " " + this.calculateFoodWeight());
-    }
-}
-
-class Cow extends Animal {
-    Cow(double weight) {
-        super(weight);
+        return ("I am " + getKind() + ", eat " + getFoodKind() + " " + calculateFoodWeight());
     }
     @Override
-    public AnimalKind getKind() {
-        return AnimalKind.COW;
+    public boolean equals(Object anObject) {
+        if (this == anObject)
+            return true;
+        if (anObject == null || getClass() != anObject.getClass())
+            return false;
+        Animal animal = (Animal) anObject;
+        return Double.compare(animal.weight, weight) == 0;
     }
     @Override
-    public FoodKind getFoodKind() {
-        return FoodKind.HAY;
-    }
-    @Override
-    public double getFoodCoeff() {
-        return 0.05;
-    }
-}
-
-class Hamster extends Animal {
-    Hamster(double weight) {
-        super(weight);
+    public int hashCode() {
+        return Objects.hash(weight);
     }
 
+    public double getFood1kgPrice() {
+        double vel = 1.0;
+        switch (getFoodKind()) {
+            case UNKNOWN:
+                vel = 0.0;
+                break;
+            case HAY:
+                vel = 20.0;
+                break;
+            case CORN:
+                vel = 50.0;
+                break;
+            }
+        return vel;
+    }
+    public double getFoodPrice() {
+        return calculateFoodWeight() * getFood1kgPrice();
+    }
     @Override
-    public AnimalKind getKind() {
-        return AnimalKind.HAMSTER;
+    public int compareFoodPrice(Animal aminal) {
+        return Double.compare(this.getFoodPrice(), aminal.getFoodPrice());
     }
 
-    @Override
-    public FoodKind getFoodKind() {
-        return FoodKind.CORN;
-    }
-    @Override
-    public double getFoodCoeff() {
-        return 0.03;
-    }
-}
-class Duck extends Animal {
-    Duck(double weight) {
-        super(weight);
-    }
-    @Override
-    public AnimalKind getKind() {
-        return AnimalKind.DUCK;
-    }
-    @Override
-    public FoodKind getFoodKind() {
-        return FoodKind.CORN;
-    }
     public static void main(String[] args) {
-        Animal typeAnimal = new Animal(60);
-        System.out.println(typeAnimal);
+        Animal resalt = new Animal(50);
+        System.out.println(resalt);
+        System.out.println(resalt.toStringFull());
+        System.out.println(resalt.getKind());
+        System.out.println(resalt.getFoodKind());
+        System.out.println(resalt.getWeight());
+        System.out.println(resalt.getFood1kgPrice());
+        System.out.println(resalt.getFoodPrice());
     }
-    @Override
-    public double getFoodCoeff() {
-        return 0.04;
-    }
+
 }
