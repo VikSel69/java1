@@ -49,19 +49,12 @@ class Animal implements FoodCompare {
     }
 
     public double getFood1kgPrice() {
-        double vel = 1.0;
         switch (getFoodKind()) {
-            case UNKNOWN:
-                vel = 0.0;
-                break;
-            case HAY:
-                vel = 20.0;
-                break;
-            case CORN:
-                vel = 50.0;
-                break;
-            }
-        return vel;
+            case UNKNOWN: return 0;
+            case HAY: return 20;
+            case CORN: return 50;
+        }
+        return 0;
     }
     public double getFoodPrice() {
         return calculateFoodWeight() * getFood1kgPrice();
