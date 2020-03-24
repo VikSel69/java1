@@ -21,13 +21,14 @@ public class Duck extends Animal {
     }
 
     public static void main(String[] args) {
-        Duck typeAnimal = new Duck(60);
+        Duck typeAnimal1 = new Duck(60);
         Duck typeAnimal2 = new Duck(80);
-        System.out.println(typeAnimal);
-        System.out.println(typeAnimal.getFoodKind());
-        System.out.println(typeAnimal.getFood1kgPrice());
-        System.out.println(typeAnimal.getFoodPrice());
-        System.out.println(typeAnimal.compareFoodPrice(typeAnimal));
-        System.out.println(typeAnimal.compareFoodPrice(typeAnimal2));
+        System.out.println(typeAnimal1);
+        System.out.println(typeAnimal1.getFoodKind());
+        System.out.println(typeAnimal1.getFood1kgPrice());
+        System.out.println(typeAnimal1.getFoodPrice());
+        System.out.println(typeAnimal1.compareFoodPrice(typeAnimal1));
+        System.out.println(typeAnimal1.compareFoodPrice(typeAnimal2));
+        System.out.println(typeAnimal1.compareWeight(typeAnimal2));
     }
 }
