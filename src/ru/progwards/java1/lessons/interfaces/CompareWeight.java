@@ -7,6 +7,7 @@ public interface CompareWeight {
     }
 
     public double getWeight();
+
     default public CompareResult compareWeight(CompareWeight smthHasWeigt) {
         int compareWeight = Double.compare(getWeight(), smthHasWeigt.getWeight());
         switch (compareWeight) {
