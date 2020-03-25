@@ -13,6 +13,7 @@ class Animal implements FoodCompare, CompareWeight {
     public Animal(double weight) {
         this.weight = weight;
     }
+
     public AnimalKind getKind() {
         return AnimalKind.ANIMAL;
     }
