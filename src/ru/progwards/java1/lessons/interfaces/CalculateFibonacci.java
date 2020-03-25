@@ -14,11 +14,12 @@ public class CalculateFibonacci {
     public static int fiboNumber(int n) {
         int num = 1;
         int rnum = 0;
+        int i = n;
         if (lastFibo != null && lastFibo.n == n)
             num = lastFibo.fibo;
         else {
-            while (n > 2) {
-                n--;
+            while (i > 2) {
+                i--;
                 rnum = num - rnum;
                 num = num + rnum;
             }
@@ -34,7 +35,10 @@ public class CalculateFibonacci {
     }
 
     public static void main(String[] args) {
-        System.out.println(fiboNumber(10));
+        System.out.println(fiboNumber(3));
+        System.out.println(lastFibo.n);
         System.out.println(lastFibo.fibo);
+        System.out.println(getLastFibo().n);
+        System.out.println(getLastFibo().fibo);
     }
 }
